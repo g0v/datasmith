@@ -6,6 +6,7 @@ def column_types(rows)
 
   columns = rows.transpose
   cts = []
+  parsed = []
 
   columns.each do |c|
     taiwan_location_token_match_count = 0
@@ -18,20 +19,42 @@ def column_types(rows)
       end
     end
 
-    puts "#{taiwan_location_token_match_count} / #{c.uniq.size}"
     if taiwan_location_token_match_count > c.uniq.size / 2
-      cts << :taiwan_location
+      cts << [:taiwan_location, taiwan_location_token_match_count / c.uniq.size.to_f]
+
+      parsed_col = []
+      c.each do |x|
+        checked = false
+        taiwan_location_tokens.each do |t|
+          if x.include? t
+            parsed_col << t
+            checked = true
+            break
+          end
+        end
+        parsed_col << x unless checked
+      end
+      parsed << parsed_col
     else
-      cts << nil
+      cts << [nil,0]
+      parsed << c
     end
   end
 
-  return cts
+  return cts, parsed
 end
 
 rows = []
-CSV.foreach(ARGV[0], { headers: :first_row, return_headers: false }) do |row|
+input = CSV.open(ARGV[0], { headers: :first_row, return_headers: false })
+input.each do |row|
   rows << row.to_hash.values
 end
 
-p column_types(rows)
+cts, parsed = column_types(rows)
+cts.each { |x| puts x.join(',') }
+
+output = CSV.open(ARGV[1], 'wb', { headers: input.headers, write_headers: true })
+parsed.transpose.each do |r|
+  output << r
+end
+
