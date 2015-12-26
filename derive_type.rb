@@ -1,4 +1,5 @@
 require 'csv'
+require 'json'
 
 def column_types(rows)
   taiwan_location_tokens = []
@@ -51,7 +52,7 @@ input.each do |row|
 end
 
 cts, parsed = column_types(rows)
-cts.each { |x| puts x.join(',') }
+puts cts.to_json
 
 output = CSV.open(ARGV[1], 'wb', { headers: input.headers, write_headers: true })
 parsed.transpose.each do |r|

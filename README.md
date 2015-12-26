@@ -11,3 +11,19 @@
 * Input: Raw data CSV
 * Output: Column Type array
 
+usage:
+
+```
+ruby derive_type.rb INPUT.csv INTERMEDIATE.csv # 將 derived 的結果輸出到 INTERMEDIATE.csv
+```
+
+### label_count_renderer.rb
+
+* Input: INTERMEDIATE.csv , 要計數的 column index
+* Output: 圖表頁面
+
+usage:
+
+```
+ruby label_count_renderer.rb INTERMEDIATE.csv INDEX
+```
