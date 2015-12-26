@@ -17,6 +17,6 @@ File.open("cities.csv",'w') do |f|
 end
 
 File.open("taiwan_location.csv", 'w') do |f|
-  cities.uniq.each { |c| f.puts c }
   areas.uniq.each { |a| f.puts a }
+  cities.uniq.each { |c| f.puts c }
 end
