@@ -9,7 +9,8 @@
     <div class="ui grid">
       <div class="three wide column"></div>
       <div class="eight wide column">
-        <h2><%= label_name %>計數統計</h2>
+        <h1 class="ui header">hotspotlist</h1>
+        <h2>地址計數統計</h2>
         <canvas id="chart" width="800" height="600"></canvas>
       </div>
       <div class="four wide column"></div>
@@ -17,7 +18,7 @@
   </body>
 
   <script>
-    var dataStr = '<%= dataStr %>';
+    var dataStr = '{"labels":["新北","臺北","彰化","臺中","高雄","桃園","宜蘭","新竹","花蓮","臺南","嘉義"],"datasets":[{"label":"My First dataset","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)","data":[1940,793,781,711,702,638,510,418,394,341,312]}]}';
 var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [

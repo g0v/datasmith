@@ -3,7 +3,7 @@ require 'json'
 
 def column_types(rows)
   taiwan_location_tokens = []
-  File.open("taiwan_location.csv").each_line { |line| taiwan_location_tokens << line.chomp }
+  File.open("cities.csv").each_line { |line| taiwan_location_tokens << line.chomp }
 
   columns = rows.transpose
   cts = []

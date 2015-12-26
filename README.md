@@ -2,6 +2,13 @@
 
 目前只有一堆 script 用來產生成果
 
+## Usage
+
+```
+ruby build.rb INPUT.csv > output.html
+open output.html
+```
+
 ## Scripts
 
 ### derive_type.rb
