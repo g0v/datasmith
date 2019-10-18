@@ -1,16 +1,11 @@
 {
-  "author": "poga",
-  "contributors": [
-    "a",
-    "b",
-    "c"
-  ],
-  "status": "alpha",
+  "repo": "g0v/datasmith",
   "name": "datasmith",
   "name_zh": "datasmith",
+  "author": "poga",
+  "status": "alpha",
   "description": "test",
   "description_zh": "test",
-  "homepage": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/g0v/datasmith"
@@ -26,7 +21,15 @@
   "products": [
     "website"
   ],
-  "projects": [
-    "i64885"
-  ]
+  "contributors": [
+    "a",
+    "b",
+    "c"
+  ],
+  "homepage": 1,
+  "thumbnail": 1,
+  "document": 1,
+  "keywords": 1,
+  "partOf": 1,
+  "needs": 1
 }
